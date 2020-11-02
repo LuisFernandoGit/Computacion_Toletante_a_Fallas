@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class proceso
+class Proceso
 {
 public:
     float resultado = 0; //Resultado de la operación realizada.
@@ -17,8 +17,8 @@ public:
     int tt = 0;          //Tiempo Transcurrido en ejecución.
     int ttb = 0;         //Tiempo Transcurrido en bloqueado.
 
-    tiempos t;           //Objeto donde se guardarán los tiempos del proceso.
-    proceso();
+    Tiempos t;           //Objeto donde se guardarán los tiempos del proceso.
+    Proceso();
 };
 
 #endif // PROCESO_H

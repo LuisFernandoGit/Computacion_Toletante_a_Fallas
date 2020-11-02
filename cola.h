@@ -6,7 +6,7 @@
 
 template<typename tipo>
 
-class cola
+class Cola
 {
     private:
         static const size_t CAPACIDAD = 25;
@@ -24,17 +24,17 @@ class cola
 };
 
 template<typename tipo>
-bool cola<tipo>::vacia(){
+bool Cola<tipo>::vacia(){
     return inicio == (final + 1) % CAPACIDAD;
 }
 
 template<typename tipo>
-bool cola<tipo>::llena(){
+bool Cola<tipo>::llena(){
     return inicio == (final + 2) % CAPACIDAD;
 }
 
 template<typename tipo>
-void cola<tipo>::encolar(tipo elemento){
+void Cola<tipo>::encolar(tipo elemento){
     if(llena())
         throw std::invalid_argument("Cola Llena");
     final = (final + 1) % CAPACIDAD;
@@ -42,14 +42,14 @@ void cola<tipo>::encolar(tipo elemento){
 }
 
 template<typename tipo>
-void cola<tipo>::desencolar(){
+void Cola<tipo>::desencolar(){
     if(vacia())
         throw std::invalid_argument("Cola  Vacia");
     inicio = (inicio + 1) % CAPACIDAD;
 }
 
 template<typename tipo>
-tipo cola<tipo>::frente(){
+tipo Cola<tipo>::frente(){
     if(vacia())
         throw std::invalid_argument("Cola Vacia");
     return elementos[inicio];

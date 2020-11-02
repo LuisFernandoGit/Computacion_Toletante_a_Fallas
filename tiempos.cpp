@@ -1,6 +1,6 @@
 #include "tiempos.h"
 
-tiempos::tiempos()
+Tiempos::Tiempos()
 {
 
 }
