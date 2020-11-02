@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <conio.h>
-#include "lote.h"
+#include "proceso.h"
 #include "cola.h"
 
 using namespace std;
