@@ -39,8 +39,8 @@ int main()
     }
     system("cls");
     //int val;
-    proceso p;       //Declaración de un objeto tipo proceso al cual le asignaremos todos los valores en sus atributos.
-    cola<proceso> c; //Declaración de una cola de procesos, donde encolaremos los procesos "p" que vayamos generando.
+    Proceso p;       //Declaración de un objeto tipo proceso al cual le asignaremos todos los valores en sus atributos.
+    Cola<Proceso> c; //Declaración de una cola de procesos, donde encolaremos los procesos "p" que vayamos generando.
     //lote l[4];
     for (int i = 1; i <= max; i++) //Este for se repetirá el mismo número de veces que el número de procesos ingresados en max.
     {
@@ -118,10 +118,10 @@ int main()
                      //    posicionp = 0;
     contador = 0;
     //    lote terminados[4];
-    cola<proceso> bloqueados; //Creamos una cola para colocar los procesos bloqueados.
-    cola<proceso> terminados; //Creamos una cola para colocar los procesos terminados.
-    cola<proceso> activos;    //Creamos una cola para colocar los procesos activos en memoria.
-    proceso nuevo;            //Declaramos un proceso nuevo que nos servirá de auxiliar.
+    Cola<Proceso> bloqueados; //Creamos una cola para colocar los procesos bloqueados.
+    Cola<Proceso> terminados; //Creamos una cola para colocar los procesos terminados.
+    Cola<Proceso> activos;    //Creamos una cola para colocar los procesos activos en memoria.
+    Proceso nuevo;            //Declaramos un proceso nuevo que nos servirá de auxiliar.
 
     cout << "Porcesos nuevos: " << pp; //Imprimimos los procesos pendientes
     gotoxy(0, 2);
@@ -233,7 +233,7 @@ int main()
             gotoxy(11, 3);
             cout << "TT";
             gotoxy(0, 4);
-            cola<proceso> aux = activos; //Creamos una cola auxiliar para obtener los datos de los 4 procesos en memoria sin
+            Cola<Proceso> aux = activos; //Creamos una cola auxiliar para obtener los datos de los 4 procesos en memoria sin
                                          //desencolarlos de la cola de procesos activos.
             aux.desencolar();            //Desencolamos el proceso en el frente, debido a que este se moverá a "En ejecución".
             while (!aux.vacia())
@@ -540,7 +540,7 @@ int main()
             activos.desencolar();      //Sacamos el proceso de memoria.
             if (activos.vacia())       //Si no queda ningún proceso en "Listo" pero aún quedan procesos pendientes
             {                          //entonces insertaremos un proceso vacío. Un proceso vacío solo tendrá como función
-                proceso v;             //hacer que el tiempo siga transcurriendo mientras llega un nuevo proceso a "Listo".
+                Proceso v;             //hacer que el tiempo siga transcurriendo mientras llega un nuevo proceso a "Listo".
                 activos.encolar(v);
                 vacio = 1; //Activamos la bandera de proceso vacío.
             }
@@ -562,7 +562,7 @@ int main()
             activos.desencolar(); //Desencolamos el proceso actual, el cual ya habíamos encolado a la cola de bloqueados.
             if (activos.vacia())  //Si todos los procesos están bloqueados entonces tendremos que insertar un proceso vacío.
             {
-                proceso v;
+                Proceso v;
                 activos.encolar(v);
                 vacio = 1;
             }
@@ -829,7 +829,7 @@ int main()
     cout << "Resultado";
     string operadorr;
 
-    cola<proceso> aux = terminados; //Usamos la cola auxiliar para imprimir los procesos terminados sin perderlos
+    Cola<Proceso> aux = terminados; //Usamos la cola auxiliar para imprimir los procesos terminados sin perderlos
                                     //ya que necesitaremos imprimirlos nuevamente cuando mostremos los tiempos.
     while (!terminados.vacia())
     {
