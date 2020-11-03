@@ -40,7 +40,7 @@ void Cola<tipo>::encolar(tipo elemento)
 {
     if (llena())
     {
-        throw std::invalid_argument("Cola Llena");
+        cout<<"Cola Llena"<<endl);
     }
     final = (final + 1) % CAPACIDAD;
     elementos[final] = elemento;
@@ -51,7 +51,7 @@ void Cola<tipo>::desencolar()
 {
     if (vacia())
     {
-        throw std::invalid_argument("Cola  Vacia");
+        cout<<"Cola  Vacia"<<endl;
     }
     inicio = (inicio + 1) % CAPACIDAD;
 }
@@ -61,7 +61,7 @@ tipo Cola<tipo>::frente()
 {
     if (vacia())
     {
-        throw std::invalid_argument("Cola Vacia");
+        cout<<"Cola Vacia"<<endl;
     }
     return elementos[inicio];
 }
