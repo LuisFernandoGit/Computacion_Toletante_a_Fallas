@@ -2,12 +2,10 @@
 //maneja interrupciones.
 #include <iostream>
 #include <math.h>
-#include <stdio.h>
 #include <windows.h>
 #include <conio.h>
 #include "proceso.h"
 #include "cola.h"
-
 using namespace std;
 
 void gotoxy(int x, int y)
