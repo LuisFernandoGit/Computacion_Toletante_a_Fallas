@@ -1,6 +1,6 @@
-#include "proceso.h"
+#include <proceso.h>
 
-proceso::proceso()
+Proceso::Proceso()
 {
 
 }
