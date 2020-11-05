@@ -81,7 +81,9 @@ int main()
 
         p.tiempo = rand() % 16 + 1; //El tiempo estimado del proceso es generado aleatoriamente en un rango de 7 a 16.
         if (p.tiempo < 7)
+        {
             p.tiempo = p.tiempo + 7;
+        }
         idi++; //Incrementamos nuestra variable que sirve como id autoincrementable.
 
         c.encolar(p);
@@ -326,7 +328,9 @@ int main()
                         cout << "Error"; //Imprimiremos un error en el resultado es -3000, es decir
                     }                    //si el proceso terminó con la tecla w.
                     else
+                    {
                         cout << aux.frente().resultado; //Si el proceso terminó normalmente, imprimimos el resultado de la operación.
+                    }
                     aux.desencolar();
                     y++;
                 }
@@ -410,15 +414,17 @@ int main()
                         aux.desencolar();
                     }
 
-                    nuevo = activos.frente();     //Guardaremos el tiempo transcurrido en el proceso para usarlo cuando regrese a ejecución.
-                    nuevo.tt = tt - 1;            //Restamos uno al TT ya que al final de la iteración este se incrementa,
-                                                  //por lo que si pasan 10 iteraciones entonces el TT diría que pasaron 11.
-                    if (nuevo.t.respuesta == -1)  //Verificamos que el tiempo de respuesta no se haya asignado aún.
+                    nuevo = activos.frente();    //Guardaremos el tiempo transcurrido en el proceso para usarlo cuando regrese a ejecución.
+                    nuevo.tt = tt - 1;           //Restamos uno al TT ya que al final de la iteración este se incrementa,
+                                                 //por lo que si pasan 10 iteraciones entonces el TT diría que pasaron 11.
+                    if (nuevo.t.respuesta == -1) //Verificamos que el tiempo de respuesta no se haya asignado aún.
+                    {
                         nuevo.t.respuesta = resp; //Si no se ha asignado, entonces lo hacemos aquí.
-                    bloqueados.encolar(nuevo);    //Encolamos el proceso en ejecuión actual a la cola de bloqueados.
-                    Sleep(1000);                  //Pausamos un segundo para que se pueda apreciar la tecla que se presionó antes de limpiar la pantalla.
-                    tr = -1;                      //rompemos el ciclo.
-                    teclav = 1;                   //Activamos la bandera.
+                    }
+                    bloqueados.encolar(nuevo); //Encolamos el proceso en ejecuión actual a la cola de bloqueados.
+                    Sleep(1000);               //Pausamos un segundo para que se pueda apreciar la tecla que se presionó antes de limpiar la pantalla.
+                    tr = -1;                   //rompemos el ciclo.
+                    teclav = 1;                //Activamos la bandera.
                 }
 
                 else if (tecla == 'p')   //La tecla p pausará el programa.
@@ -653,8 +659,9 @@ int main()
             cout << "Error";
         }
         else
+        {
             cout << aux.frente().resultado;
-
+        }
         gotoxy(29, y);
         cout << aux.frente().tiempo;
         gotoxy(35, y);
