@@ -1,7 +1,7 @@
 #ifndef PROCESO_H
 #define PROCESO_H
 #include <iostream>
-#include "tiempos.h"
+#include <tiempos.h>
 using namespace std;
 
 

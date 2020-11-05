@@ -4,8 +4,8 @@
 #include <math.h>
 #include <windows.h>
 #include <conio.h>
-#include "proceso.h"
-#include "cola.h"
+#include <proceso.h>
+#include <cola.h">
 using namespace std;
 
 void gotoxy(int x, int y)

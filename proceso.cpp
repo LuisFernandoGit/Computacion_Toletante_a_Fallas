@@ -1,4 +1,4 @@
-#include "proceso.h"
+#include <proceso.h>
 
 Proceso::Proceso()
 {

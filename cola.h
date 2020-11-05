@@ -15,7 +15,7 @@ private:
     size_t inicio;
 
 public:
-    cola<tipo>() : final(CAPACIDAD - 1), inicio(0) {}
+    Cola<tipo>() : final(CAPACIDAD - 1), inicio(0) {}
     bool vacia();
     bool llena();
     void encolar(tipo elemento);
@@ -40,7 +40,7 @@ void Cola<tipo>::encolar(tipo elemento)
 {
     if (llena())
     {
-        cout<<"Cola Llena"<<endl);
+        cout<<"Cola Llena"<<endl;
     }
     final = (final + 1) % CAPACIDAD;
     elementos[final] = elemento;
