@@ -85,20 +85,9 @@ int main()
             p.tiempo = p.tiempo + 7;
         }
         idi++; //Incrementamos nuestra variable que sirve como id autoincrementable.
-
         c.encolar(p);
-        //        l[posicionl].proceso[posicionp] = p;
-        //        posicionp++;
-        //        if(posicionp == 4)
-        //        {
-        //            posicionp = 0;
-        //            posicionl++;
-        //        }
         system("cls");
     }
-
-    //    if(posicionl == 4)
-    //        posicionl--;
     int pp = max - 4; //Esta variable representa los procesos pendientes que se encuentran en el estado "Nuevo",
     if (pp < 0)       //Como debemos tener 4 procesos en memoria, esta variable será igual al número de procesos
     {
